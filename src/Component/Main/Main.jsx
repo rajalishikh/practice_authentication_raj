@@ -6,9 +6,11 @@ import Navbar from "../Navbar/Navbar";
 
 const Main = () => {
     return (
-        <div>
+        <div className="min-h-svh flex flex-col">
             <Navbar></Navbar>
-            <Outlet></Outlet>
+           <div className="flex-grow">
+             <Outlet></Outlet>
+           </div>
             <Footer></Footer>
             
         </div>
