@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router";
+import Bushra from "../Component/Busra/Bushra";
 import Home from "../Component/Home/Home";
 import Login from "../Component/Login/Login";
 import Main from "../Component/Main/Main";
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
         {
             path:"/",
             element:<Home>
+              <Bushra></Bushra>
             
             </Home>
         },
