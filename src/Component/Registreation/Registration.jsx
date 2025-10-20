@@ -1,6 +1,10 @@
 
+
+
 const Registration = () => {
-    const handleSubmit=(e)=>{
+
+  
+  const handleSubmit=(e)=>{
         console.log(e)
         e.preventDefault()
         const email=e.target.email.value 
