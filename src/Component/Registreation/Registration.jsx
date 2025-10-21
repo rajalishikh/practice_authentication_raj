@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import Context from "../Context/Context";
 
 
 
 const Registration = () => {
+  const useData=useContext(Context)
+  console.log(useData)
 
   
   const handleSubmit=(e)=>{
