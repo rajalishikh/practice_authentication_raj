@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../../Firebase/Firebase";
 import Context from "../Context/Context";
 
@@ -19,8 +19,23 @@ const Authprovider = ({children}) => {
   
     }
 
+    const loginUser=(email,password)=>{
+        signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user)
+    
+  })
+  .catch((error) => {
+    console.log(error)
+  });
+
+    }
+
     const authInformation={
-        registerUser
+        registerUser,
+        loginUser
     }
     return (
         <div>
