@@ -4,8 +4,9 @@ import Context from "../Context/Context";
 
 
 const Registration = () => {
-  const useData=useContext(Context)
-  console.log(useData)
+        
+  const {registerUser}=useContext(Context)
+  
 
   
   const handleSubmit=(e)=>{
@@ -16,6 +17,8 @@ const Registration = () => {
         const password=e.target.password.value 
         const phone=e.target.number.value
         console.log(email,name,password,phone) 
+        registerUser(email,password)
+       
     }
     return (
         <div>
