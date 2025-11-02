@@ -41,7 +41,8 @@ const Registration = () => {
           <label className="label">Email</label>
           <input name="email" type="email" className="input" placeholder="Email" />
           <label className="label">Password</label>
-          <input name="password" type="password" className="input" placeholder="Password" />
+          <input  pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).{8,}"
+       title="Minimum 8 characters, include 1 uppercase, 1 lowercase and 1 special character" name="password" type="password" className="input" placeholder="Password" />
           <label className="label">Name</label>
           <input name="name" type="text" className="input" placeholder="Name" />
           <label className="label">Phone Number</label>
