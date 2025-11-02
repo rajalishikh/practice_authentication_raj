@@ -3,6 +3,8 @@ import Context from "../Context/Context";
 
 const Login = () => {
   const {loginUser}=useContext(Context)
+  console.log(loginUser)
+
 
   const handleLogin=(e)=>{
     e.preventDefault()
@@ -24,6 +26,7 @@ const Login = () => {
           <input type="password" className="input" placeholder="Password" name="password"/>
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Login</button>
+          
         </form>
       </div>
     </div>

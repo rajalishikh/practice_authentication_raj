@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Context from "../Context/Context";
 
 
@@ -6,6 +6,9 @@ import Context from "../Context/Context";
 const Registration = () => {
         
   const {registerUser}=useContext(Context)
+  const [error,setError]=useState("");
+  const [success,setSuccess]=useState(false)
+
   
 
   
@@ -17,7 +20,14 @@ const Registration = () => {
         const password=e.target.password.value 
         const phone=e.target.number.value
         console.log(email,name,password,phone) 
+        if(password.length <= 6){
+          setError("You have must be 6 Character")
+          return 
+        }
         registerUser(email,password)
+        setSuccess(true)
+
+        
        
     }
     return (
@@ -38,6 +48,11 @@ const Registration = () => {
           <input name="number" type="number" className="input" placeholder="Phone Number" />
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Registration </button>
+          <div>
+            {error && <h3 className="text-red-500 font-extrabold">{error}</h3>}
+            {success && <h3 className="text-green-500 font font-extrabold">Your registration is Success</h3>}
+          
+          </div>
         </form>
       </div>
    
