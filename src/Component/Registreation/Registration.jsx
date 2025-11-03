@@ -7,7 +7,7 @@ const Registration = () => {
         
   const {registerUser}=useContext(Context)
   const [error,setError]=useState("");
-  const [success,setSuccess]=useState(false)
+  
 
   
 
@@ -25,7 +25,9 @@ const Registration = () => {
           return 
         }
         registerUser(email,password)
-        setSuccess(true)
+        .then(result=>console.log(result.user))
+        .catch(error=>setError(error.message))
+       
 
         
        
@@ -51,7 +53,7 @@ const Registration = () => {
           <button className="btn btn-neutral mt-4">Registration </button>
           <div>
             {error && <h3 className="text-red-500 font-extrabold">{error}</h3>}
-            {success && <h3 className="text-green-500 font font-extrabold">Your registration is Success</h3>}
+            
           
           </div>
         </form>

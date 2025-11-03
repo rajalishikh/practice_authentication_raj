@@ -6,32 +6,12 @@ const Authprovider = ({children}) => {
     
 
     const registerUser=(email,password)=>{
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    console.log(user)
-    // ...
-  })
-  .catch((error) => {
-   console.log(error)
-  });
-  
-    }
+       return createUserWithEmailAndPassword(auth, email, password)
+       }
 
     const loginUser=(email,password)=>{
-        signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user)
-    
-  })
-  .catch((error) => {
-    console.log(error)
-  });
-
-    }
+        return signInWithEmailAndPassword(auth, email, password)
+      }
 
     const authInformation={
         registerUser,
