@@ -5,7 +5,9 @@ import Context from "../Context/Context";
 
 const Registration = () => {
         
-  const {registerUser}=useContext(Context)
+  const {registerUser,user,setUser}=useContext(Context)
+  console.log(user)
+  
   const [error,setError]=useState("");
   
 
@@ -25,8 +27,11 @@ const Registration = () => {
           return 
         }
         registerUser(email,password)
-        .then(result=>console.log(result.user))
+        .then(result=>{
+          setUser(result.user)
+        })
         .catch(error=>setError(error.message))
+        
        
 
         

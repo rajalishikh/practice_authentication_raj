@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { NavLink } from "react-router";
+import Context from "../Context/Context";
 
 const Navbar = () => {
+  const {user}=useContext(Context)
+  console.log(user?.email)
     return (
         <div>
             <div className="navbar bg-base-100 shadow-sm">
@@ -29,7 +33,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a className="btn">{user && <small>{user?.email}</small>}</a>
   </div>
 </div>
             
