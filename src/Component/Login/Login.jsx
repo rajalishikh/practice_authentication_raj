@@ -13,6 +13,7 @@ const Login = () => {
     const password=e.target.password.value 
     console.log(email,password)
     loginUser(email,password)
+    .then(result=>console.log(result))
 
   }
     return (
